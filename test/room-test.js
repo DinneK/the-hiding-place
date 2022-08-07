@@ -1,61 +1,25 @@
 import { expect } from "chai";
-import Room from "..src/classes/room";
+import { mockData } from "./mockData";
+import Room from "../src/classes/room";
 
 describe("Room", () => {
-  let newRooms;
+  let room1;
+  let room2;
+  let room3;
 
   beforeEach(() => {
-    newRooms = {
-      rooms: [
-        {
-          number: 1,
-          roomType: "residential suite",
-          bidet: true,
-          bedSize: "queen",
-          numBeds: 1,
-          costPerNight: 358.4,
-        },
-        {
-          number: 2,
-          roomType: "suite",
-          bidet: false,
-          bedSize: "full",
-          numBeds: 2,
-          costPerNight: 477.38,
-        },
-        {
-          number: 3,
-          roomType: "single room",
-          bidet: false,
-          bedSize: "king",
-          numBeds: 1,
-          costPerNight: 491.14,
-        },
-        {
-          number: 4,
-          roomType: "single room",
-          bidet: false,
-          bedSize: "queen",
-          numBeds: 1,
-          costPerNight: 429.44,
-        },
-        {
-          number: 5,
-          roomType: "single room",
-          bidet: true,
-          bedSize: "queen",
-          numBeds: 2,
-          costPerNight: 340.17,
-        },
-        {
-          number: 6,
-          roomType: "junior suite",
-          bidet: true,
-          bedSize: "queen",
-          numBeds: 1,
-          costPerNight: 397.02,
-        },
-      ],
-    };
+    room1 = new Room(mockData.rooms[0]);
+    room2 = new Room(mockData.rooms[2]);
+    room3 = new Room(mockData.rooms[6]);
+  });
+
+  it("should be a function", () => {
+    expect(Room).to.be.a("function");
+  });
+
+  it("should be an instance of Room", () => {
+    expect(room1).to.be.an.instanceOf(Room);
+    expect(room2).to.be.an.instanceOf(Room);
+    expect(room3).to.be.an.instanceOf(Room);
   });
 });

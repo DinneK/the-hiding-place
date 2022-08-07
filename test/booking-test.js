@@ -1,49 +1,26 @@
 import { expect } from "chai";
-import Booking from "..src/classes/booking";
+import { mockData } from "./mockData";
+import Booking from "../src/classes/booking";
+import Guest from "../src/classes/guest";
 
 describe("Booking", () => {
-  let newBookings;
+  let booking1;
+  let booking2;
+  let booking3;
 
   beforeEach(() => {
-    newBookings = {
-      bookings: [
-        {
-          id: "5fwrgu4i7k55hl6sz",
-          userID: 9,
-          date: "2022/04/22",
-          roomNumber: 15,
-        },
-        {
-          id: "5fwrgu4i7k55hl6t5",
-          userID: 43,
-          date: "2022/01/24",
-          roomNumber: 24,
-        },
-        {
-          id: "5fwrgu4i7k55hl6t6",
-          userID: 13,
-          date: "2022/01/10",
-          roomNumber: 12,
-        },
-        {
-          id: "5fwrgu4i7k55hl6t7",
-          userID: 20,
-          date: "2022/02/16",
-          roomNumber: 7,
-        },
-        {
-          id: "5fwrgu4i7k55hl6t8",
-          userID: 1,
-          date: "2022/02/05",
-          roomNumber: 12,
-        },
-        {
-          id: "5fwrgu4i7k55hl6t9",
-          userID: 38,
-          date: "2023/12/14",
-          roomNumber: 14,
-        },
-      ],
-    };
+    booking1 = new Booking(mockData.bookings[3]);
+    booking2 = new Booking(mockData.bookings[4]);
+    booking3 = new Booking(mockData.bookings[5]);
+  });
+
+  it("should be a function", () => {
+    expect(Booking).to.be.a("function");
+  });
+
+  it("should be an instance of Guest", () => {
+    expect(booking1).to.be.an.instanceOf(Booking);
+    expect(booking2).to.be.an.instanceOf(Booking);
+    expect(booking3).to.be.an.instanceOf(Booking);
   });
 });
