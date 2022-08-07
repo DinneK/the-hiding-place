@@ -1,3 +1,139 @@
+
+/* * {
+  border: 2px solid black;
+} */
+
 body {
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  background-image: url('/src/images/dark-leaves.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.gate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gate-img {
+  margin-left: 20%;
+  height: 600px;
+  border: .0px solid black;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.hiding-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10%;
+  margin-left: -70px;
+}
+
+.title-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #764C26; */
+  /* border: 0.5px solid black; */
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+  color: #fee6e3;
+  font-family: 'Playfair Display', serif;
+  width: 300px;
+  text-shadow:1px 0 0 #111111,0 1px 0 #111111,-1px 0 0 #111111,0 -1px 0 #111111
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.dash {
+  display: flex;
+  align-items: center;
+}
+
+.enter-dash {
+  align-items: center;
+  margin-left: -75px;
+  margin-right: -75px;
+  margin-top: 200px;
+  height: 150px;
+  width: 300px;
+  background-color: #fee6e3;
+  border-radius: 200px / 100px;
+  font-family: 'Italianno', cursive;
+  font-size: 50px;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.enter-dash:after {
+  background-color: #111;
+  border-radius: 200px / 100px;
+  content: "";
+  display: block;
+  height: 150px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.enter-dash:hover:after {
+  transform: translate(0, 0);
+}
+
+.enter-dash:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.enter-dash:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}
+
+.quick-booking-and-admin-access {
+  display: flex;
+  align-items: flex-start;
+}
+
+.booking-button,
+.admin-button {
+  background-color: #E5E5CA;
+  border: .5px solid;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  margin: 10px;
+}
+ 
+
