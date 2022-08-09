@@ -19,16 +19,24 @@ let bookings;
 
 //FETCH CALLS
 function initializeCustomerData() {
-  getCustomersData.then((data) => console.log(data));
+  getCustomersData.then((data) => {
+    customers = data.customers.map((customer) => new Guest(customer));
+    return customers;
+  });
 }
 
 function initializeRoomData() {
-  getRoomsData.then((data) => console.log(data));
-  loadBookingPage();
+  getRoomsData.then((data) => {
+    rooms = data.rooms.map((room) => new Room(room));
+    return rooms;
+  });
 }
 
 function initializeBookingData() {
-  getBookingsData.then((data) => console.log(data));
+  getBookingsData.then((data) => {
+    bookings = data.bookings.map((booking) => new Booking(booking));
+    return bookings;
+  });
 }
 
 //SELECTORS HOME PAGE
@@ -44,12 +52,19 @@ const calendarInput = document.querySelector(".calendar");
 const roomDetailGrid = document.querySelector(".rooms-and-details");
 
 //EVENT LISTENERS
-//window.addEventListener("load", initializeRoomData);
-window.addEventListener("load", homePage);
+window.addEventListener("load", () => {
+  initializeCustomerData();
+  initializeRoomData();
+  initializeBookingData();
+  homePage();
+  console.log({ rooms });
+  console.log({ customers });
+  console.log({ bookings });
+});
+//window.addEventListener("load", homePage);
 dashboardBtn.addEventListener("click", loadLoginPage);
 bookBtn.addEventListener("click", () => {
   loadBookingPage();
-  initializeRoomData();
 });
 
 //HELPER FUNCTIONS
@@ -89,6 +104,14 @@ function loadBookingPage() {
 }
 
 function allRoomDetails() {
+  console.log({ rooms });
   document.body.style.background = `url('./images/light-leaves.png')`;
-  roomDetailGrid.innerHTML += `<section class="rooms-and-details"><img class="hotel-room1" src="./images/hotel-room1.png"/></section>`;
+  roomDetailGrid.innerHTML += `<section class="rooms-and-details"><img class="hotel-room1" src="./images/hotel-room1.png"/>
+    <ul>
+      <li>${rooms[0].roomType}</li>
+      <li>${rooms[0].bedSize}</li>
+      <li>${rooms[0].numBeds}</li>
+      <li>$${rooms[0].costPerNight}</li>
+    </ul>
+  </section>`;
 }

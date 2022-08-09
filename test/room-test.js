@@ -63,12 +63,27 @@ describe("Room", () => {
   });
 
   it("should should be able to choose rooms by type", () => {
-    const bookings = mockData.bookings.map((booking) => new Booking(booking));
+    const rooms = mockData.rooms.map((room) => new Room(room));
 
-    expect(room1.filterRoomByType(bookings, "residential suite")).to.deep.equal(
-      ["residential suite"]
-    );
-    expect(room2.filterRoomByType(bookings)).to.deep.equal(["single room"]);
-    expect(room3.filterRoomByType(bookings)).to.deep.equal(["suite"]);
+    expect(room1.filterRoomByType(rooms, "residential suite")).to.deep.equal([
+      {
+        bedSize: "queen",
+        bidet: true,
+        costPerNight: 358.4,
+        numBeds: 1,
+        roomNumber: 1,
+        roomType: "residential suite",
+      },
+      {
+        bedSize: "twin",
+        bidet: false,
+        costPerNight: 457.88,
+        numBeds: 1,
+        roomNumber: 14,
+        roomType: "residential suite",
+      },
+    ]);
+    //expect(room2.filterRoomByType(bookings)).to.deep.equal(["single room"]);
+    //expect(room3.filterRoomByType(bookings)).to.deep.equal(["suite"]);
   });
 });
