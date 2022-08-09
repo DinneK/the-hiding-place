@@ -8,11 +8,8 @@ class Room {
     this.costPerNight = room.costPerNight;
   }
 
-  filterRoomByType(bookings) {
-    const filteredRoom = bookings.filter(
-      (booking) => booking.roomType === this.roomType
-    );
-    filteredRoom.push(this.roomType);
+  filterRoomByType(rooms, roomType) {
+    const filteredRoom = rooms.filter((room) => room.roomType === roomType);
     return filteredRoom;
   }
 }
