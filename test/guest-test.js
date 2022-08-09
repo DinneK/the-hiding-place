@@ -52,6 +52,7 @@ describe("Guest", () => {
 
     expect(guest1.showRoomsStayedIn(bookings, rooms)).to.deep.equal([
       {
+        bookingID: "5fwrgu4i7k55hl6t8",
         date: "2022/02/05",
         roomNumber: 12,
         roomType: "single room",
@@ -65,6 +66,7 @@ describe("Guest", () => {
     expect(guest2.showRoomsStayedIn(bookings, rooms)).to.deep.equal([]);
     expect(guest3.showRoomsStayedIn(bookings, rooms)).to.deep.equal([
       {
+        bookingID: "5fwrgu4i7k55hl6t7",
         date: "2022/02/16",
         roomNumber: 7,
         roomType: "single room",
@@ -74,6 +76,7 @@ describe("Guest", () => {
         costPerNight: 231.46,
       },
       {
+        bookingID: "5fwrgu4i7k55hl6ui",
         date: "2022/02/07",
         roomNumber: 24,
         roomType: "suite",

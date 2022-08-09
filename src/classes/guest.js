@@ -19,6 +19,7 @@ class Guest {
         (room) => room.roomNumber === booking.roomNumber
       );
       const roomDetails = {
+        bookingID: booking.bookingID,
         date: booking.dateBooked,
         roomNumber: foundRoom.roomNumber,
         roomType: foundRoom.roomType,
