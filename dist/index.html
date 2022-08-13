@@ -18,10 +18,11 @@
     <section class="booking-page">
       <container class="calendar">
         <h3 class="check-in">Check-In</h3>
-        <input type="date" id="start" name="trip-start" value="2018-07-22"    min="2020-01-01" max="2024-12-31">
+        <input type="date" id="start" name="trip-start" value="2022-07-22"    min="2020-01-01" max="2024-12-31" required>
+        <span class="validity"></span>
+        <button class="calendar-submit">Submit</button>
       </container>
       <section class="rooms-and-details">
-        <img class="hotel-room1" src="./images/hotel-room1.png" alt="A hotel room"/>
       </section>
     </section>
 
@@ -38,19 +39,26 @@
         <h4>Where Your Troubles Can't Find You</h4>
       </div>
     </section>
-    <section class="quick-booking-and-admin-access">
-      <button class="booking-button">BOOK</button>
-      <button class="admin-button">ADMIN LOGIN</button>
-    </section>
 
     <section class="login-page">
       <div class="login-form">
         <form class="user-sign-in-form">
           <p>Welcome</p>
-          <input type="username" placeholder="Username"><br>
-          <input type="password" placeholder="Password"><br>
-          <input type="button" value="Sign in"><br>
+          <input id="username" type="username" placeholder="Username"><br>
+          <input id="password" type="password" placeholder="Password"><br>
+          <p id="error-message"></p>
+          <input id='sign-in' type="button" value="Sign in"><br>
         </form>
+    </section>
+
+    <section class="guest-dashboard">
+      <section class="guest-details"></section>
+      <section class="past-room-details"></section>
+    </section>
+
+    <section class="quick-booking-and-admin-access">
+      <button class="booking-button">BOOK</button>
+      <button class="admin-button">ADMIN LOGIN</button>
     </section>
   </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->

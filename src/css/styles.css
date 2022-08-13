@@ -1,8 +1,4 @@
 
-/* * {
-  border: 2px solid black;
-} */
-
 body {
   background-image: url('/src/images/dark-leaves.png');
   background-size: cover;
@@ -42,8 +38,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #764C26; */
-  /* border: 0.5px solid black; */
   border-radius: 8px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
   color: #fee6e3;
@@ -167,8 +161,7 @@ h4 {
     margin-top: 0;
     margin-bottom: 40px;
   }
-  
-  
+
   input {
     background: #ffdeda;
     width: 200px;
@@ -193,12 +186,6 @@ h4 {
   color: rgb(5, 4, 4);
 }
 
-.calendar {
-  display: block;
-  /* font-family: 'Italianno', cursive; */
-  /* font: 1rem 'Fira Sans', sans-serif; */
-  /* margin: .4rem 0; */
-}
 
 h3 {
   color: #E5E5CA;
@@ -209,18 +196,120 @@ h3 {
   text-shadow:1px 0 0 #111111,0 1px 0 #111111,-1px 0 0 #111111,0 -1px 0 #111111
 }
 
-/* label {
-  margin: .4rem 0;
-} */
+.calendar-submit {
+  background: #ffdeda;
+  font-family: 'Italianno', cursive;
+  font-size: 24px;
+  margin-left: 5px;
+  padding: 3px;
+  padding-right: 8px;
+  border: none;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5000px;
+  width: 75px;
+  transition: all .2s ease-in-out;
+}
+
+.calendar-submit:hover {
+  transform: scale(1.1);
+}
+
+.booking-page {
+  margin-left: 10px;
+}
 
 .rooms-and-details {
-  height: 150px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.rooms-icon {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 125px;
+}
+
+.room-font {
+  color: #E5E5CA;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow:1px 0 0 #111111,0 1px 0 #111111,-1px 0 0 #111111,0 -1px 0 #111111;
 }
 
 .hotel-room1 {
   height: 125px
 }
 
+#error-message {
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.guest-dashboard {
+  display: flex;
+  align-items: baseline;
+  margin: 5px;
+}
+
+.welcome-and-total {
+  margin-top: 100px;
+  margin-right: 30px;
+  padding-left: 10px;
+  padding-right: 15px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
+  background-color: #fee6e3;
+  opacity: .7;
+  text-align: center;
+}
+
+.personal-welcome {
+  font-family: 'Italianno', cursive;
+  font-size: 50px;
+}
+
+h5 {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.personal-total {
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+}
+
+.guest-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.past-room-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-top: 100px;
+}
+
+.bookings-box {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
+  background-color: #111111;
+  opacity: .7;
+}
 
 .hidden {
   display: none;
